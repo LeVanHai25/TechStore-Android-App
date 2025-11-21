@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+
+
+    <!-- 🔹 Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_quaylai"
+            app:tint="@color/teal_700" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Chi tiết sản phẩm"
+            android:textColor="@color/teal_700"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Ảnh sản phẩm -->
+            <ImageView
+                android:id="@+id/img_product_detail"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:background="@color/gray" />
+
+            <!-- Tên -->
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Giá -->
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:textSize="20sp"
+                android:textColor="#E91E63"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Mô tả -->
+            <TextView
+                android:id="@+id/tv_product_description"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Hàng chứa nút giỏ hàng và lựa chọn phiên bản -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp">
+
+                <!-- Nút Thêm vào giỏ -->
+                <Button
+                    android:id="@+id/btn_add_to_cart"
+                    android:text="Thêm vào giỏ hàng"
+                    android:backgroundTint="@color/teal_700"
+                    android:textColor="#fff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
+
+                <!-- Cột Phiên bản -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:text="Phiên bản đặc biệt"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_white"
+                            android:text="Trắng"
+                            android:backgroundTint="#E0E0E0"
+                            android:textColor="#000"
+                            android:layout_marginEnd="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:minWidth="80dp"
+                            android:minHeight="40dp"
+                            />
+
+                        <Button
+                            android:id="@+id/btn_gray"
+                            android:text="Xám"
+                            android:backgroundTint="#E0E0E0"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:minWidth="80dp"
+                            android:minHeight="40dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Rating trung bình -->
+            <TextView
+                android:id="@+id/tv_avg_rating"
+                android:text="0.0/5 (0 đánh giá)"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RatingBar
+                android:id="@+id/rating_avg_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="4dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/star_active"
+                android:secondaryProgressTint="@color/star_active"
+                android:stepSize="0.5" />
+
+            <!-- Đánh giá của bạn -->
+            <TextView
+                android:text="Đánh giá của bạn"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RatingBar
+                android:id="@+id/rb_my_rating"
+                style="@style/TinyRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1" />
+
+
+            <EditText
+                android:id="@+id/edt_review_comment"
+                android:hint="Viết nhận xét của bạn..."
+                android:minLines="2"
+                android:gravity="top"
+                android:background="@drawable/bg_input"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_send_review"
+                android:text="Gửi đánh giá"
+                android:backgroundTint="@color/pastelPrimary"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Danh sách review -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_reviews"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TechStore</string>
+    <string name="greeting">Xin chào,</string>
+    <string name="user_default">Người dùng!</string>
+    <string name="hint_search">Tìm sản phẩm</string>
+    <string name="desc_search_icon">Biểu tượng tìm kiếm</string>
+    <string name="btn_back">Quay lại</string>
+    <string name="cart_title">Giỏ hàng của bạn</string>
+    <string name="cart_total_label">Tổng cộng</string>
+    <string name="cart_checkout">Thanh toán</string>
+    <!-- 🛒 Cart item content descriptions and labels -->
+    <string name="product_image">Ảnh sản phẩm</string>
+    <string name="decrease_quantity">Giảm số lượng</string>
+    <string name="increase_quantity">Tăng số lượng</string>
+    <string name="delete_item">Xóa sản phẩm</string>
+    <!-- 🏷️ General text -->
+    <string name="product_name">Tên sản phẩm</string>
+    <string name="product_price">Giá sản phẩm</string>
+    <string name="checkout">Thanh toán</string>
+    <!-- 🖼 Placeholder -->
+    <string name="placeholder_image">Hình minh họa sản phẩm</string>
+
+</resources>

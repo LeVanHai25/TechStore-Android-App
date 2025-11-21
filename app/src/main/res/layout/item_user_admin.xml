@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên người dùng"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/tv_user_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vai trò" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <!-- Nút chặn/mở chặn -->
+        <ImageButton
+            android:id="@+id/btn_block_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_lock_lock"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Chặn/Mở chặn user"
+            app:tint="@android:color/holo_red_dark" />
+
+        <!-- Nút xoá -->
+        <ImageButton
+            android:id="@+id/btn_delete_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Xoá user"
+            app:tint="@android:color/holo_blue_dark" />
+
+    </LinearLayout>
+
+</LinearLayout>

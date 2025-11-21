@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pastelBackground">
+
+    <!-- 🔹 Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_back"
+            android:src="@drawable/ic_quaylai"
+            app:tint="@color/teal_700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Thông tin cá nhân"
+            android:textColor="@color/teal_700"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 🔹 Nội dung cuộn -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- 🧑‍💼 Ảnh đại diện -->
+            <FrameLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_logo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/logo_tech_store"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Logo"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/pastelPrimary" />
+
+                <ImageButton
+                    android:id="@+id/btn_edit_avatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_button_round"
+                    app:tint="@color/white"
+                    android:src="@drawable/ic_edit"
+                    android:contentDescription="Chỉnh sửa ảnh"
+                    android:elevation="3dp"
+                    android:padding="6dp" />
+            </FrameLayout>
+
+            <!-- 🧾 Các trường thông tin -->
+            <LinearLayout style="@style/ProfileInputRow">
+                <ImageView style="@style/ProfileIcon" android:src="@drawable/ic_person" />
+                <EditText
+                    android:id="@+id/edt_name"
+                    style="@style/ProfileInputField"
+                    android:hint="Họ và tên" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ProfileInputRow">
+                <ImageView style="@style/ProfileIcon" android:src="@drawable/ic_email" />
+                <EditText
+                    android:id="@+id/edt_email"
+                    style="@style/ProfileInputField"
+                    android:hint="Email"
+                    android:enabled="false"
+                    android:textColorHint="#888888" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ProfileInputRow">
+                <ImageView style="@style/ProfileIcon" android:src="@drawable/ic_phone" />
+                <EditText
+                    android:id="@+id/edt_phone"
+                    style="@style/ProfileInputField"
+                    android:hint="Số điện thoại"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ProfileInputRow">
+                <ImageView style="@style/ProfileIcon" android:src="@drawable/ic_location" />
+                <EditText
+                    android:id="@+id/edt_address"
+                    style="@style/ProfileInputField"
+                    android:hint="Địa chỉ" />
+            </LinearLayout>
+
+            <!-- 🔘 Nút cập nhật -->
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/pastelPrimary"
+                android:text="Cập nhật thông tin"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- 🔘 Nút cập nhật -->
+            <Button
+                android:id="@+id/btn_change_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/pastelPrimary"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- 🔘 Nút đăng xuất -->
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/teal_700"
+                android:text="Đăng xuất"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🔹 Thanh điều hướng dưới -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemIconTint="@color/bottom_nav_selector"
+        app:itemTextColor="@color/bottom_nav_selector" />
+</LinearLayout>

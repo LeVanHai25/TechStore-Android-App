@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_dialog_pastel"
+    android:gravity="center_horizontal">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Nhập địa chỉ chi tiết"
+        android:textColor="@color/pastelPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Các ô nhập -->
+    <EditText
+        android:id="@+id/edt_house"
+        style="@style/AddressInputStyle"
+        android:hint="Số nhà" />
+
+    <EditText
+        android:id="@+id/edt_street"
+        style="@style/AddressInputStyle"
+        android:hint="Tên đường" />
+
+    <EditText
+        android:id="@+id/edt_ward"
+        style="@style/AddressInputStyle"
+        android:hint="Phường / Xã" />
+
+    <EditText
+        android:id="@+id/edt_district"
+        style="@style/AddressInputStyle"
+        android:hint="Quận / Huyện" />
+
+    <EditText
+        android:id="@+id/edt_city"
+        style="@style/AddressInputStyle"
+        android:hint="Tỉnh / Thành phố" />
+
+    <!-- Hai nút hành động -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:weightSum="2">
+
+        <!-- Nút Hủy -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_primary"
+            android:text="Hủy"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Nút Xác nhận -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_primary"
+            android:backgroundTint="@color/pastelPrimary"
+            android:text="Xác nhận"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
